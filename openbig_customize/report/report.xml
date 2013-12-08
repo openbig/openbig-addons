@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report
+            auto="False"
+            id="sale_order_report_ob"
+            model="sale.order"
+            name="sale.order.orderreport"
+            rml="openbig_customize/report/sale_order_orderreport.rml"
+            string="Bestellformular"
+            usage="default"
+            />
+        
+    </data>
+</openerp>
