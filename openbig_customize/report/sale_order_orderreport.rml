@@ -65,7 +65,6 @@
       <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
       <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="3,-1" stop="3,-1"/>
       <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="4,-1" stop="4,-1"/>
-      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="5,-1" stop="5,-1"/>
     </blockTableStyle>
     <blockTableStyle id="Table6">
       <blockAlignment value="LEFT"/>
@@ -95,10 +94,7 @@
     <initialize>
       <paraStyle name="all" alignment="justify"/>
     </initialize>
-    <paraStyle name="P1" fontName="Helvetica" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
-    <paraStyle name="P2" fontName="Helvetica" fontSize="10.0" leading="13" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
-    <paraStyle name="P3" fontName="Helvetica" fontSize="8.0" leading="10" alignment="LEFT"/>
-    <paraStyle name="P4" fontName="Helvetica" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P1" fontName="Helvetica" fontSize="10.0" leading="13" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="Standard" fontName="Helvetica"/>
     <paraStyle name="Heading" fontName="Helvetica" fontSize="14.0" leading="17" spaceBefore="12.0" spaceAfter="6.0"/>
     <paraStyle name="Text body" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
@@ -131,11 +127,9 @@
     <blockTable colWidths="227.0,46.0,201.0" style="Table1">
       <tr>
         <td>
-          <para style="P4">[[ get_partner(o.partner_id,'invoice').parent_id and get_partner(o.partner_id,'invoice').parent_id.name or '' ]]</para>
-          <para style="P4">[[ get_partner_name(get_partner(o.partner_id,'invoice')) ]]</para>
-          <para style="terp_default_8">
-            <font face="Helvetica" size="9.0">[[ display_addressOB(get_partner(o.partner_id,'invoice')) ]]</font>
-          </para>
+          <para style="terp_default_9">[[ get_partner(o.partner_id,'invoice').parent_id and get_partner(o.partner_id,'invoice').parent_id.name or '' ]]</para>
+          <para style="terp_default_9">[[ get_partner_name(get_partner(o.partner_id,'invoice')) ]]</para>
+          <para style="terp_default_9">[[ display_addressOB(get_partner(o.partner_id,'invoice')) ]]</para>
         </td>
         <td>
           <para style="terp_default_8">
@@ -192,7 +186,7 @@
     <para style="terp_default_8">
       <font color="white"> </font>
     </para>
-    <blockTable colWidths="185.0,88.0,69.0,70.0,67.0" repeatRows="1" style="Table4">
+    <blockTable colWidths="185.0,79.0,78.0,70.0,67.0" repeatRows="1" style="Table4">
       <tr>
         <td>
           <para style="terp_tblheader_Details">Description</para>
@@ -213,7 +207,7 @@
     </blockTable>
     <section>
       <para style="terp_default_1">[[repeatIn(o.order_line,'line')]]</para>
-      <blockTable colWidths="185.0,88.0,46.0,24.0,70.0,66.0" style="Table5">
+      <blockTable colWidths="185.0,80.0,78.0,70.0,66.0" style="Table5">
         <tr>
           <td>
             <para style="terp_default_9">[[ line.name ]]</para>
@@ -222,10 +216,7 @@
             <para style="terp_default_Centre_9">[[ ', '.join(map(lambda x: x.name, line.tax_id)) ]]</para>
           </td>
           <td>
-            <para style="terp_default_Right_9">[[ formatLang(line.product_uos and line.product_uos_qty or line.product_uom_qty) ]] </para>
-          </td>
-          <td>
-            <para style="P1">[[ line.product_uos and line.product_uos.name or line.product_uom.name ]]</para>
+            <para style="terp_default_Right_9">[[ formatLang(line.product_uos and line.product_uos_qty or line.product_uom_qty) ]] [[ line.product_uos and line.product_uos.name or line.product_uom.name ]]</para>
           </td>
           <td>
             <para style="terp_default_Right_9">[[ formatLang(line.price_unit ) ]]</para>
@@ -240,11 +231,6 @@
           </td>
           <td>
             <para style="terp_default_Centre_9">
-              <font color="white"> </font>
-            </para>
-          </td>
-          <td>
-            <para style="terp_default_Right_9">
               <font color="white"> </font>
             </para>
           </td>
@@ -326,7 +312,7 @@
     <para style="terp_default_8">
       <font color="white"> </font>
     </para>
-    <para style="P2">Hiermit bestätigen wir die Bestellung der o.a. Leistungen und die Zahlungs- und Lieferbedingungen zum angegebenen Liefertermin unter Zugrundelegung der Allgemeinen Geschäftsbedingungen von OpenBIG.</para>
+    <para style="P1">Hiermit bestätigen wir die Bestellung der o.a. Leistungen und die Zahlungs- und Lieferbedingungen zum angegebenen Liefertermin unter Zugrundelegung der Allgemeinen Geschäftsbedingungen von OpenBIG.</para>
     <para style="terp_default_8">
       <font color="white"> </font>
     </para>
@@ -336,27 +322,27 @@
     <blockTable colWidths="482.0" style="Tabelle1">
       <tr>
         <td>
-          <para style="P3">
+          <para style="terp_default_8">
             <font color="white"> </font>
           </para>
-          <para style="P3">
+          <para style="terp_default_8">
             <font color="white"> </font>
           </para>
-          <para style="P3">
+          <para style="terp_default_8">
             <font color="white"> </font>
           </para>
-          <para style="P3">
+          <para style="terp_default_8">
             <font color="white"> </font>
           </para>
-          <para style="P3">
+          <para style="terp_default_8">
             <font color="white"> </font>
           </para>
-          <para style="P3">
+          <para style="terp_default_8">
             <font face="Helvetica">Datum und Ort </font>
             <font face="Helvetica">Unterschrift </font>
             <font face="Helvetica">Stempel</font>
           </para>
-          <para style="P3">
+          <para style="terp_default_8">
             <font color="white"> </font>
           </para>
         </td>
