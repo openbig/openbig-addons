@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  base_apps_menu_invisible for OpenERP
+  Copyrigt (C) 2013 OpenGLOBE Grzegorz Grzelak (www.openglobe.pl)
+                       and big-consulting GmbH (www.openbig.de)
+  The licence is in the file __openerp__.py
+-->
+
+<openerp>
+    <data>
+    <!-- New order for apps menu  -->
+<!--                <menuitem id="apps_moved" name="Apps" parent="base.menu_custom"/>
+-->
+        <menuitem id="base.module_mi" parent="base.menu_management" name="Apps" sequence="100" action="base.modules_act_cl"/>
+
+        <menuitem id="base.menu_module_updates" parent="base.menu_management" name="Updates" sequence="110" action="base.modules_updates_act_cl"/>
+
+<!--        <menuitem id="module_mi_moved" parent="apps_moved" name="Apps" sequence="10" action="base.modules_act_cl"/>
+
+        <menuitem id="menu_module_updates_moved" parent="apps_moved" name="Updates" sequence="20" action="base.modules_updates_act_cl"/>
+-->
+        <record id="modules_local_kanban" model="ir.actions.act_window">
+            <field name="name">Local Modules</field>
+            <field name="res_model">ir.module.module</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="base.view_module_filter"/>
+        </record>
+
+        <menuitem id="menu_modules_local" parent="base.menu_management" name="Local Modules" sequence="10" action="modules_local_kanban"/>
+
+
+    </data>
+</openerp>
+
