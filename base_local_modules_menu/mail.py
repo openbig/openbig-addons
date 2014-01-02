@@ -19,31 +19,22 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.      #
 #                                                                               #
 #################################################################################
-{
-    'name': 'Modules Menu Reordering',
-    'version': '0.03 (7.0)',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'description': """The Module changes Modules menu to see Local Modules as first.
-""",
-    'author': 'Thorsten Vocks/Grzegorz Grzelak for OpenBIG.org',
-    'website': 'http://www.openbig.org',
-    'depends': ['base', 'mail'], 
-    'data': [
-           'base_modules_menu_order.xml',
-           'mail_data.xml',
-           'ir_cron.xml',
-    ],
-    
-    'js': [
-        'static/src/js/announcement.js',
-    ],
-    'qweb': [
-        'static/src/xml/base.xml',
-    ],
-    'demo_xml': [],
-    'installable': True,
-    'auto_install': True,
-    'application': False,
-}
+
+from openerp.osv import osv
+import logging
+
+_logger = logging.getLogger(__name__)
+
+class publisher_warranty_contract(osv.osv):
+    _inherit = 'publisher_warranty.contract'
+
+    def update_notification(self, cr, uid, ids, cron_mode=True,
+                            context=None):
+
+        #_logger.info("NO More Spying Stuff")
+
+        return True
+
+
+publisher_warranty_contract()
 
